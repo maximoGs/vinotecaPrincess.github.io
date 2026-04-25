@@ -18,6 +18,12 @@
         <div class="noise-overlay"></div>
     </div>
 
+    <div class="lang-switcher">
+        <button data-lang="es" class="active">ES</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="pt">PT</button>
+    </div>
+
     <main class="container">
         <div class="glass-card">
             <header>
@@ -25,9 +31,9 @@
             </header>
             
             <div class="content">
-                <span class="badge">Evento Privado</span>
+                <span class="badge" data-i18n="badge">Evento Privado</span>
                 <!-- <h1 class="title">El Arte del Buen Vino</h1> -->
-                <p class="subtitle">Registrá tu correo electrónico para obtener acceso exclusivo a una <strong>sesión de degustación premium</strong> para una sola persona.</p>
+                <p class="subtitle" data-i18n="subtitle">Registrá tu correo electrónico para obtener acceso exclusivo a una <strong>sesión de degustación premium</strong> para una sola persona.</p>
                 
                 <form id="emailForm" class="email-form">
                     <div class="input-group">
@@ -35,20 +41,20 @@
                         <input type="email" id="email" name="email" placeholder="tu@email.com" required>
                     </div>
                     <button type="submit" class="submit-btn" id="submitBtn">
-                        <span>Obtener Invitación</span>
+                        <span data-i18n="btn_submit">Obtener Invitación</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </button>
                 </form>
 
                 <div id="successMessage" class="success-message hidden">
                     <svg class="success-icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-                    <h3>¡Conectando...!</h3>
-                    <p>Serás redirigido a WhatsApp para confirmar tu degustación.</p>
+                    <h3 data-i18n="success_title">¡Conectando...!</h3>
+                    <p data-i18n="success_desc">Serás redirigido a WhatsApp para confirmar tu degustación.</p>
                 </div>
             </div>
             
             <footer>
-                <p>&copy; 2026 Vinoteca Princess. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Vinoteca Princess. <span data-i18n="footer">Todos los derechos reservados.</span></p>
             </footer>
         </div>
     </main>
