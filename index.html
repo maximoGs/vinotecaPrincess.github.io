@@ -3,60 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinoteca Princess - Degustación Exclusiva</title>
-    <meta name="description" content="Únete a Vinoteca Princess y accede a una degustación de vinos exclusiva. Déjanos tu email para recibir tu invitación.">
+    <title>Vinoteca Princess — Degustación Exclusiva</title>
+    <meta name="description" content="Únete a Vinoteca Princess y accede a una degustación de vinos exclusiva con posibilidad de premios. Registrá tu email para reservar tu lugar.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Vinoteca Princess — Degustación Exclusiva">
+    <meta property="og:description" content="Registrá tu email para acceder a una degustación premium y participar por premios exclusivos.">
+    <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background-container">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-        <div class="noise-overlay"></div>
+
+    <!-- Ambient Background -->
+    <div class="ambient" aria-hidden="true">
+        <div class="ambient__orb ambient__orb--1"></div>
+        <div class="ambient__orb ambient__orb--2"></div>
+        <div class="ambient__orb ambient__orb--3"></div>
+        <div class="ambient__particles" id="particles"></div>
     </div>
 
-    <div class="lang-switcher">
-        <button data-lang="es" class="active">ES</button>
-        <button data-lang="en">EN</button>
-        <button data-lang="pt">PT</button>
-    </div>
+    <!-- Language Switcher -->
+    <nav class="lang-bar" role="navigation" aria-label="Language selector">
+        <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+        <div class="lang-divider" aria-hidden="true"></div>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <div class="lang-divider" aria-hidden="true"></div>
+        <button class="lang-btn" data-lang="pt" aria-pressed="false">PT</button>
+    </nav>
 
-    <main class="container">
-        <div class="glass-card">
-            <header>
-                <h2 class="brand">Vinoteca Princess</h2>
-            </header>
-            
-            <div class="content">
-                <span class="badge" data-i18n="badge">Evento Privado</span>
-                <!-- <h1 class="title">El Arte del Buen Vino</h1> -->
-                <p class="subtitle" data-i18n="subtitle">Registrá tu correo electrónico para obtener acceso exclusivo a una <strong>sesión de degustación premium</strong> para una sola persona.</p>
-                
-                <form id="emailForm" class="email-form">
-                    <div class="input-group">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+    <!-- Main Content -->
+    <main class="page">
+        <article class="card" role="main">
+
+            <!-- Brand Header -->
+            <header class="card__header">
+                <div class="brand">
+                    <div class="brand__crown" aria-hidden="true">
+                        <svg class="crown-svg" viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 44 L14 14 L28 30 L40 4 L52 30 L66 14 L76 44 Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+                            <circle cx="4" cy="44" r="3" fill="currentColor"/>
+                            <circle cx="76" cy="44" r="3" fill="currentColor"/>
+                            <circle cx="14" cy="14" r="3" fill="currentColor"/>
+                            <circle cx="66" cy="14" r="3" fill="currentColor"/>
+                            <circle cx="40" cy="4" r="3.5" fill="currentColor"/>
+                            <line x1="4" y1="47" x2="76" y2="47" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
                     </div>
-                    <button type="submit" class="submit-btn" id="submitBtn">
-                        <span data-i18n="btn_submit">Obtener Invitación</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    <h1 class="brand__name">Vinoteca Princess</h1>
+                    <div class="brand__rule" aria-hidden="true">
+                        <span class="rule-line"></span>
+                        <span class="rule-diamond">◆</span>
+                        <span class="rule-line"></span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Body Content -->
+            <section class="card__body">
+                <div class="pill" aria-label="Event type">
+                    <span class="pill__dot" aria-hidden="true"></span>
+                    <span data-i18n="badge">Evento Privado</span>
+                </div>
+
+                <p class="tagline" data-i18n="subtitle">
+                    Registrá tu correo y obtené acceso exclusivo a nuestra <strong>degustación premium</strong> con posibilidad de ganar <strong>premios sorpresa</strong>.
+                </p>
+
+                <!-- Email Form -->
+                <form id="emailForm" class="form" novalidate aria-label="Formulario de registro">
+                    <div class="form__field" id="fieldWrapper">
+                        <label for="emailInput" class="form__label" data-i18n="label">Correo electrónico</label>
+                        <div class="form__control">
+                            <svg class="form__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                            </svg>
+                            <input
+                                type="email"
+                                id="emailInput"
+                                name="email"
+                                class="form__input"
+                                autocomplete="email"
+                                inputmode="email"
+                                spellcheck="false"
+                                required
+                                aria-required="true"
+                                aria-describedby="emailError"
+                                data-i18n-placeholder="placeholder"
+                            />
+                            <div class="form__check" id="checkIcon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+                            </div>
+                        </div>
+                        <p class="form__error" id="emailError" role="alert" aria-live="polite"></p>
+                    </div>
+
+                    <button type="submit" class="btn" id="submitBtn" aria-label="Enviar registro">
+                        <span class="btn__text" data-i18n="btn_submit">Reservar mi lugar</span>
+                        <svg class="btn__arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </button>
                 </form>
 
-                <div id="successMessage" class="success-message hidden">
-                    <svg class="success-icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-                    <h3 data-i18n="success_title">¡Conectando...!</h3>
-                    <p data-i18n="success_desc">Serás redirigido a WhatsApp para confirmar tu degustación.</p>
+                <!-- Success State -->
+                <div id="successState" class="success hidden" role="status" aria-live="polite">
+                    <div class="success__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                    </div>
+                    <h2 class="success__title" data-i18n="success_title">¡Redirigiendo a WhatsApp!</h2>
+                    <p class="success__text" data-i18n="success_desc">Tu lugar está siendo reservado. Completá la confirmación vía WhatsApp.</p>
                 </div>
-            </div>
-            
-            <footer>
-                <p>&copy; 2026 Vinoteca Princess. <span data-i18n="footer">Todos los derechos reservados.</span></p>
+            </section>
+
+            <!-- Footer -->
+            <footer class="card__footer">
+                <div class="trust-badges" aria-label="Trust indicators">
+                    <div class="trust-item">
+                        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        <span data-i18n="trust_1">100% Privado</span>
+                    </div>
+                    <span class="trust-sep" aria-hidden="true">·</span>
+                    <div class="trust-item">
+                        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span data-i18n="trust_2">Sin spam</span>
+                    </div>
+                    <span class="trust-sep" aria-hidden="true">·</span>
+                    <div class="trust-item">
+                        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 6v6l4 2"/></svg>
+                        <span data-i18n="trust_3">Cupos limitados</span>
+                    </div>
+                </div>
+                <p class="copyright">&copy; 2026 Vinoteca Princess</p>
             </footer>
-        </div>
+
+        </article>
     </main>
 
     <script src="script.js"></script>
