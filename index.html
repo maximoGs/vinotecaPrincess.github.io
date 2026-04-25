@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinoteca Princess - Degustación Exclusiva</title>
+    <meta name="description" content="Únete a Vinoteca Princess y accede a una degustación de vinos exclusiva. Déjanos tu email para recibir tu invitación.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="noise-overlay"></div>
+    </div>
+
+    <main class="container">
+        <div class="glass-card">
+            <header>
+                <h2 class="brand">Vinoteca Princess</h2>
+            </header>
+            
+            <div class="content">
+                <span class="badge">Evento Privado</span>
+                <h1 class="title">El Arte del Buen Vino</h1>
+                <p class="subtitle">Registrá tu correo electrónico para obtener acceso exclusivo a una <strong>sesión de degustación premium</strong> para una sola persona.</p>
+                
+                <form id="emailForm" class="email-form">
+                    <div class="input-group">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span>Obtener Invitación</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </button>
+                </form>
+
+                <div id="successMessage" class="success-message hidden">
+                    <svg class="success-icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                    <h3>¡Invitación Reservada!</h3>
+                    <p>Revisá tu bandeja de entrada pronto para los detalles de tu degustación privada.</p>
+                </div>
+            </div>
+            
+            <footer>
+                <p>&copy; 2026 Vinoteca Princess. Todos los derechos reservados.</p>
+            </footer>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
