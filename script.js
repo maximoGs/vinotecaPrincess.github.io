@@ -39,8 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 form.style.display = 'none';
                 successMessage.classList.remove('hidden');
                 
+                // Redirigir a WhatsApp
+                const email = emailInput.value;
+                const encodedMessage = encodeURIComponent(`Deseo sumarme a la desgustacion! (Email: ${email})`);
+                window.open(`https://wa.me/5492615715889?text=${encodedMessage}`, '_blank');
+                
                 // Logging for verification
-                console.log(`[Vinoteca Princess] Email registrado exitosamente: ${emailInput.value}`);
+                console.log(`[Vinoteca Princess] Redirigiendo a WhatsApp. Email: ${email}`);
                 
                 // Clean up input value
                 emailInput.value = '';
